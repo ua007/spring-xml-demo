@@ -26,10 +26,4 @@
 
     </bean>
 
-    <bean name="movieA,movieB" scope="prototype" class="com.stackroute.domain.Movie" autowire="constructor">
-
-    </bean>
-
-
-
 </beans>

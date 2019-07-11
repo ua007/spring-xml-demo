@@ -14,16 +14,9 @@ public class Main {
 
         System.out.println("Application Context");
 
-        //movie1
-        Movie movie1=applicationContext.getBean("movie",Movie.class);
-        System.out.println(movie1);
-
-        //movie2
-        Movie movie2=applicationContext.getBean("movieB",Movie.class);
-        System.out.println(movie2);
-        System.out.println(movie1==movie2);
-
-
+        //printing movie
+        Movie movie=(Movie) applicationContext.getBean("movie",Movie.class);
+        System.out.println(movie);
 
     }
 }
