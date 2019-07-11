@@ -22,18 +22,14 @@
 
     </bean>
 
-    <bean id="movie" class="com.stackroute.domain.Movie">
-
-        <constructor-arg ref="actor1"/>
-        <constructor-arg ref="actor2"/>
+    <bean id="movie" scope="prototype" class="com.stackroute.domain.Movie" autowire="byName">
 
     </bean>
 
-    <bean name="movieA,movieB" class="com.stackroute.domain.Movie" scope="prototype">
-
-        <constructor-arg ref="actor1"/>
-        <constructor-arg ref="actor2"/>
+    <bean name="movieA,movieB" scope="prototype" class="com.stackroute.domain.Movie" autowire="constructor">
 
     </bean>
+
+
 
 </beans>
