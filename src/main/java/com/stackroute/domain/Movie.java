@@ -7,27 +7,27 @@ import org.springframework.context.ApplicationContextAware;
 
 public class Movie implements ApplicationContextAware, BeanNameAware {
 
-    private Actor actor1,actor2,actor3;
+    private Actor actor;
     private ApplicationContext context=null;
 
 
+    public Movie() {
+        this.actor=null;
+    }
+
+    public Movie(Actor actor) {
+        this.actor = actor;
+    }
+
     public void setActor1(Actor actor1) {
-        this.actor1 = actor1;
+        this.actor = actor1;
     }
 
-    public void setActor2(Actor actor2) {
-        this.actor2 = actor2;
-    }
-
-    public void setActor3(Actor actor3) {
-        this.actor3 = actor3;
-    }
 
     @Override
     public String toString() {
         return "Movie{" +
-                "actor1=" + actor1 +
-                ", actor2=" + actor2 +
+                "actor=" + actor +
                 '}';
     }
 

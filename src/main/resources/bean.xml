@@ -6,8 +6,33 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="beanDemo" class="com.stackroute.demo.BeanLifecycleDemoBean" destroy-method="customDestroy" init-method="customInit">
+    <bean id="actor" class="com.stackroute.domain.Actor">
+
+        <constructor-arg value="Utkarsh"/>
+        <constructor-arg value="Male"/>
+        <constructor-arg value="22"/>
 
     </bean>
+
+    <bean id="actor2" class="com.stackroute.domain.Actor">
+
+        <constructor-arg value="Vishal"/>
+        <constructor-arg value="male"/>
+        <constructor-arg value="22"/>
+
+    </bean>
+    <bean id="beanPostProcessorDemoBean" class="com.stackroute.demo.BeanPostProcessorDemoBean">
+
+    </bean>
+    <bean id="movieA,movieB" scope="prototype" class="com.stackroute.domain.Movie" autowire="constructor">
+
+    </bean>
+
+
+<!--    <bean id="beanDemo" class="com.stackroute.demo.BeanLifecycleDemoBean" destroy-method="customDestroy" init-method="customInit">-->
+
+<!--    </bean>-->
+
+
 
 </beans>

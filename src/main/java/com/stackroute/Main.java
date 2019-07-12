@@ -1,9 +1,11 @@
 package com.stackroute;
 
 import com.stackroute.demo.BeanLifecycleDemoBean;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Movie;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
@@ -11,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
         //Printing the content using application context
-        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("bean.xml");
+        AbstractApplicationContext applicationContext=new ClassPathXmlApplicationContext("bean.xml");
 
 //        System.out.println("Application Context");
 //
@@ -19,8 +21,9 @@ public class Main {
 //        Movie movie=(Movie) applicationContext.getBean("movie",Movie.class);
 //        System.out.println(movie);
 
-        BeanLifecycleDemoBean beanDemo=(BeanLifecycleDemoBean) applicationContext.getBean("beanDemo",BeanLifecycleDemoBean.class);
-        System.out.println(beanDemo.customInit()+"\n"+beanDemo.customDestroy());
+        applicationContext.registerShutdownHook();
+
+
 
     }
 }
